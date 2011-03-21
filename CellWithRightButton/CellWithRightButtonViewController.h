@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CellWithRightButtonViewController : UIViewController {
-    
-}
+@interface CellWithRightButtonViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 @end

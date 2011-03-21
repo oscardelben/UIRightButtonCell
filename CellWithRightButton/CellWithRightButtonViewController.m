@@ -7,43 +7,40 @@
 //
 
 #import "CellWithRightButtonViewController.h"
+#import "CustomCell.h"
 
 @implementation CellWithRightButtonViewController
 
+@synthesize tableView;
+
 - (void)dealloc
 {
+    [tableView release];
+    
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"CellIdentifier";
     
-    // Release any cached data, images, etc that aren't in use.
-}
+    CustomCell *cell = (CustomCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) 
+    {
+        cell = [[[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
 
-#pragma mark - View lifecycle
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-*/
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    cell.rightButtonTextNormal = @"Normal";
+    cell.rightButtonTextSelected = @"Tapped";
+    cell.rightButtonTextOff = @"Done";
+	cell.textLabel.text = [NSString stringWithFormat:@"Cell %i", indexPath.row + 1];
+	return cell;
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553AFBFC133777F80034B037 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 553AFBFB133777F80034B037 /* CustomCell.m */; };
 		559B0F2F133775C700180E4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559B0F2E133775C700180E4E /* UIKit.framework */; };
 		559B0F31133775C700180E4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559B0F30133775C700180E4E /* Foundation.framework */; };
 		559B0F33133775C700180E4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559B0F32133775C700180E4E /* CoreGraphics.framework */; };
@@ -19,18 +20,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		553AFBFA133777F80034B037 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		553AFBFB133777F80034B037 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		559B0F2A133775C700180E4E /* CellWithRightButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CellWithRightButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		559B0F2E133775C700180E4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		559B0F30133775C700180E4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		559B0F32133775C700180E4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		559B0F36133775C700180E4E /* CellWithRightButton-Info.plist */ = {isa = PBXFileReference; path = "CellWithRightButton-Info.plist"; sourceTree = "<group>"; };
+		559B0F36133775C700180E4E /* CellWithRightButton-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CellWithRightButton-Info.plist"; sourceTree = "<group>"; };
 		559B0F38133775C700180E4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		559B0F3A133775C700180E4E /* CellWithRightButton-Prefix.pch */ = {isa = PBXFileReference; path = "CellWithRightButton-Prefix.pch"; sourceTree = "<group>"; };
+		559B0F3A133775C700180E4E /* CellWithRightButton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CellWithRightButton-Prefix.pch"; sourceTree = "<group>"; };
 		559B0F3B133775C700180E4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		559B0F3D133775C700180E4E /* CellWithRightButtonAppDelegate.h */ = {isa = PBXFileReference; path = CellWithRightButtonAppDelegate.h; sourceTree = "<group>"; };
+		559B0F3D133775C700180E4E /* CellWithRightButtonAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellWithRightButtonAppDelegate.h; sourceTree = "<group>"; };
 		559B0F3E133775C700180E4E /* CellWithRightButtonAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellWithRightButtonAppDelegate.m; sourceTree = "<group>"; };
 		559B0F41133775C700180E4E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		559B0F43133775C700180E4E /* CellWithRightButtonViewController.h */ = {isa = PBXFileReference; path = CellWithRightButtonViewController.h; sourceTree = "<group>"; };
+		559B0F43133775C700180E4E /* CellWithRightButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellWithRightButtonViewController.h; sourceTree = "<group>"; };
 		559B0F44133775C700180E4E /* CellWithRightButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellWithRightButtonViewController.m; sourceTree = "<group>"; };
 		559B0F47133775C700180E4E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CellWithRightButtonViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,10 +52,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		553AFBF81337762E0034B037 /* Resources Group */ = {
+			isa = PBXGroup;
+			children = (
+				559B0F46133775C700180E4E /* CellWithRightButtonViewController.xib */,
+				559B0F40133775C700180E4E /* MainWindow.xib */,
+			);
+			name = "Resources Group";
+			sourceTree = "<group>";
+		};
 		559B0F1F133775C700180E4E = {
 			isa = PBXGroup;
 			children = (
 				559B0F34133775C700180E4E /* CellWithRightButton */,
+				553AFBF81337762E0034B037 /* Resources Group */,
 				559B0F2D133775C700180E4E /* Frameworks */,
 				559B0F2B133775C700180E4E /* Products */,
 			);
@@ -81,10 +94,10 @@
 			children = (
 				559B0F3D133775C700180E4E /* CellWithRightButtonAppDelegate.h */,
 				559B0F3E133775C700180E4E /* CellWithRightButtonAppDelegate.m */,
-				559B0F40133775C700180E4E /* MainWindow.xib */,
 				559B0F43133775C700180E4E /* CellWithRightButtonViewController.h */,
 				559B0F44133775C700180E4E /* CellWithRightButtonViewController.m */,
-				559B0F46133775C700180E4E /* CellWithRightButtonViewController.xib */,
+				553AFBFA133777F80034B037 /* CustomCell.h */,
+				553AFBFB133777F80034B037 /* CustomCell.m */,
 				559B0F35133775C700180E4E /* Supporting Files */,
 			);
 			path = CellWithRightButton;
@@ -167,6 +180,7 @@
 				559B0F3C133775C700180E4E /* main.m in Sources */,
 				559B0F3F133775C700180E4E /* CellWithRightButtonAppDelegate.m in Sources */,
 				559B0F45133775C700180E4E /* CellWithRightButtonViewController.m in Sources */,
+				553AFBFC133777F80034B037 /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +201,7 @@
 				559B0F41133775C700180E4E /* en */,
 			);
 			name = MainWindow.xib;
+			path = CellWithRightButton;
 			sourceTree = "<group>";
 		};
 		559B0F46133775C700180E4E /* CellWithRightButtonViewController.xib */ = {
@@ -195,6 +210,7 @@
 				559B0F47133775C700180E4E /* en */,
 			);
 			name = CellWithRightButtonViewController.xib;
+			path = CellWithRightButton;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -279,6 +295,7 @@
 				559B0F4D133775C700180E4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
