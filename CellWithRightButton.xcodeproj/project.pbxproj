@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		559B0F2F133775C700180E4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559B0F2E133775C700180E4E /* UIKit.framework */; };
+		559B0F31133775C700180E4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559B0F30133775C700180E4E /* Foundation.framework */; };
+		559B0F33133775C700180E4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559B0F32133775C700180E4E /* CoreGraphics.framework */; };
+		559B0F39133775C700180E4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 559B0F37133775C700180E4E /* InfoPlist.strings */; };
+		559B0F3C133775C700180E4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 559B0F3B133775C700180E4E /* main.m */; };
+		559B0F3F133775C700180E4E /* CellWithRightButtonAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 559B0F3E133775C700180E4E /* CellWithRightButtonAppDelegate.m */; };
+		559B0F42133775C700180E4E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559B0F40133775C700180E4E /* MainWindow.xib */; };
+		559B0F45133775C700180E4E /* CellWithRightButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 559B0F44133775C700180E4E /* CellWithRightButtonViewController.m */; };
+		559B0F48133775C700180E4E /* CellWithRightButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559B0F46133775C700180E4E /* CellWithRightButtonViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		559B0F2A133775C700180E4E /* CellWithRightButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CellWithRightButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		559B0F2E133775C700180E4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		559B0F30133775C700180E4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		559B0F32133775C700180E4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		559B0F36133775C700180E4E /* CellWithRightButton-Info.plist */ = {isa = PBXFileReference; path = "CellWithRightButton-Info.plist"; sourceTree = "<group>"; };
+		559B0F38133775C700180E4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		559B0F3A133775C700180E4E /* CellWithRightButton-Prefix.pch */ = {isa = PBXFileReference; path = "CellWithRightButton-Prefix.pch"; sourceTree = "<group>"; };
+		559B0F3B133775C700180E4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		559B0F3D133775C700180E4E /* CellWithRightButtonAppDelegate.h */ = {isa = PBXFileReference; path = CellWithRightButtonAppDelegate.h; sourceTree = "<group>"; };
+		559B0F3E133775C700180E4E /* CellWithRightButtonAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellWithRightButtonAppDelegate.m; sourceTree = "<group>"; };
+		559B0F41133775C700180E4E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		559B0F43133775C700180E4E /* CellWithRightButtonViewController.h */ = {isa = PBXFileReference; path = CellWithRightButtonViewController.h; sourceTree = "<group>"; };
+		559B0F44133775C700180E4E /* CellWithRightButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellWithRightButtonViewController.m; sourceTree = "<group>"; };
+		559B0F47133775C700180E4E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CellWithRightButtonViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		559B0F27133775C700180E4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559B0F2F133775C700180E4E /* UIKit.framework in Frameworks */,
+				559B0F31133775C700180E4E /* Foundation.framework in Frameworks */,
+				559B0F33133775C700180E4E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		559B0F1F133775C700180E4E = {
+			isa = PBXGroup;
+			children = (
+				559B0F34133775C700180E4E /* CellWithRightButton */,
+				559B0F2D133775C700180E4E /* Frameworks */,
+				559B0F2B133775C700180E4E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		559B0F2B133775C700180E4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				559B0F2A133775C700180E4E /* CellWithRightButton.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		559B0F2D133775C700180E4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				559B0F2E133775C700180E4E /* UIKit.framework */,
+				559B0F30133775C700180E4E /* Foundation.framework */,
+				559B0F32133775C700180E4E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		559B0F34133775C700180E4E /* CellWithRightButton */ = {
+			isa = PBXGroup;
+			children = (
+				559B0F3D133775C700180E4E /* CellWithRightButtonAppDelegate.h */,
+				559B0F3E133775C700180E4E /* CellWithRightButtonAppDelegate.m */,
+				559B0F40133775C700180E4E /* MainWindow.xib */,
+				559B0F43133775C700180E4E /* CellWithRightButtonViewController.h */,
+				559B0F44133775C700180E4E /* CellWithRightButtonViewController.m */,
+				559B0F46133775C700180E4E /* CellWithRightButtonViewController.xib */,
+				559B0F35133775C700180E4E /* Supporting Files */,
+			);
+			path = CellWithRightButton;
+			sourceTree = "<group>";
+		};
+		559B0F35133775C700180E4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				559B0F36133775C700180E4E /* CellWithRightButton-Info.plist */,
+				559B0F37133775C700180E4E /* InfoPlist.strings */,
+				559B0F3A133775C700180E4E /* CellWithRightButton-Prefix.pch */,
+				559B0F3B133775C700180E4E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		559B0F29133775C700180E4E /* CellWithRightButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 559B0F4B133775C700180E4E /* Build configuration list for PBXNativeTarget "CellWithRightButton" */;
+			buildPhases = (
+				559B0F26133775C700180E4E /* Sources */,
+				559B0F27133775C700180E4E /* Frameworks */,
+				559B0F28133775C700180E4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CellWithRightButton;
+			productName = CellWithRightButton;
+			productReference = 559B0F2A133775C700180E4E /* CellWithRightButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		559B0F21133775C700180E4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = DibiStore;
+			};
+			buildConfigurationList = 559B0F24133775C700180E4E /* Build configuration list for PBXProject "CellWithRightButton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 559B0F1F133775C700180E4E;
+			productRefGroup = 559B0F2B133775C700180E4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				559B0F29133775C700180E4E /* CellWithRightButton */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		559B0F28133775C700180E4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559B0F39133775C700180E4E /* InfoPlist.strings in Resources */,
+				559B0F42133775C700180E4E /* MainWindow.xib in Resources */,
+				559B0F48133775C700180E4E /* CellWithRightButtonViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		559B0F26133775C700180E4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559B0F3C133775C700180E4E /* main.m in Sources */,
+				559B0F3F133775C700180E4E /* CellWithRightButtonAppDelegate.m in Sources */,
+				559B0F45133775C700180E4E /* CellWithRightButtonViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		559B0F37133775C700180E4E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				559B0F38133775C700180E4E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		559B0F40133775C700180E4E /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				559B0F41133775C700180E4E /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		559B0F46133775C700180E4E /* CellWithRightButtonViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				559B0F47133775C700180E4E /* en */,
+			);
+			name = CellWithRightButtonViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		559B0F49133775C700180E4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		559B0F4A133775C700180E4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		559B0F4C133775C700180E4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CellWithRightButton/CellWithRightButton-Prefix.pch";
+				INFOPLIST_FILE = "CellWithRightButton/CellWithRightButton-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		559B0F4D133775C700180E4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CellWithRightButton/CellWithRightButton-Prefix.pch";
+				INFOPLIST_FILE = "CellWithRightButton/CellWithRightButton-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		559B0F24133775C700180E4E /* Build configuration list for PBXProject "CellWithRightButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559B0F49133775C700180E4E /* Debug */,
+				559B0F4A133775C700180E4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		559B0F4B133775C700180E4E /* Build configuration list for PBXNativeTarget "CellWithRightButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559B0F4C133775C700180E4E /* Debug */,
+				559B0F4D133775C700180E4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 559B0F21133775C700180E4E /* Project object */;
+}
