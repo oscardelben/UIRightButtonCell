@@ -18,7 +18,6 @@
 @implementation CustomCell
 
 @synthesize delegate;
-@synthesize rightButtonTextNormal, rightButtonTextSelected, rightButtonTextDone;
 @synthesize rightButtonState;
 @synthesize buttons;
 @synthesize buttonStateNormal, buttonStateSelected, buttonStateDone;
@@ -27,9 +26,6 @@
 - (void)dealloc
 {
     [delegate release];
-    [rightButtonTextNormal release];
-    [rightButtonTextSelected release];
-    [rightButtonTextDone release];
 
     [buttons release];
     
@@ -42,68 +38,55 @@
 
 - (void)switchViewsFromState:(int)fromState toState:(int)toState
 {
-    UIView *view1 = [buttons objectAtIndex:fromState];
-    UIView *view2 = [buttons objectAtIndex:toState];
+    UIButton *button1 = [buttons objectAtIndex:fromState];
+    UIButton *button2 = [buttons objectAtIndex:toState];
     
     rightButtonState = toState;
     
-    view1.hidden = YES;
-    view2.hidden = NO;
+    button1.hidden = YES;
+    button2.hidden = NO;
 }
 
-- (UIButton *)buttonWithTitle:(NSString *)title;
+- (void)configureButtons:(NSArray *)views
 {
-    float textWidth = [title sizeWithFont:[UIFont boldSystemFontOfSize:fontSize]].width;
-    
-    int width = textWidth + padding * 2;
-    int height = self.frame.size.height - padding * 2;
-    
-    int x = self.frame.size.width - width - padding * 2;
-    int y = padding;
-    
-    CGRect buttonRect = CGRectMake(x, y, width, height);
-    
-    UIButton *button = [[[UIButton alloc] initWithFrame:buttonRect] autorelease];
-    
-    [button addTarget:self action:@selector(buttonTouched:) forControlEvents:UIControlEventTouchUpInside];
-    
-    button.backgroundColor = [UIColor orangeColor];
-    
-    [button setTitle:title forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:fontSize];
-    
-    // hidden by default
-    button.hidden = YES;
-    
-    return button;
+    for (UIButton *button in views)
+    {
+        // calculate frame
+        int width = button.frame.size.width;
+        int height = button.frame.size.height;
+
+        int x = self.frame.size.width - width - padding * 2;
+        int y = (self.frame.size.height - height) / 2;
+        
+        button.frame = CGRectMake(x, y, width, height);
+        button.hidden = YES;
+        
+        [button addTarget:self action:@selector(buttonTouched:) forControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
     
-    // We already have the buttons
-    if (buttons)
+    // Check if we already have the buttons
+    if (self.buttons)
         return;
-
-    buttonStateNormal = [self buttonWithTitle:rightButtonTextNormal];
-    buttonStateSelected = [self buttonWithTitle:rightButtonTextSelected];
-    buttonStateDone = [self buttonWithTitle:rightButtonTextDone];
     
     self.buttons = [NSArray arrayWithObjects:buttonStateNormal, buttonStateSelected, buttonStateDone, nil];
+    [self configureButtons:buttons];
     
     // Should set this if null (but we don't have null for integers right?). Maybe it's already 0 by default
-    rightButtonState = kRightButtonStateNormal;
+    self.rightButtonState = kRightButtonStateNormal;
     
     UIButton *button = (UIButton *)[buttons objectAtIndex:rightButtonState];
     button.hidden = NO;
-    
+        
     [self addSubview:buttonStateNormal];
     [self addSubview:buttonStateSelected];
     [self addSubview:buttonStateDone];
 }
 
-// TODO: add callbacks for changing state
 - (void)buttonTouched:(id)sender
 {
     switch (rightButtonState) 
@@ -119,7 +102,8 @@
         case kRightButtonStateSelected:
             [self switchViewsFromState:kRightButtonStateSelected toState:kRightButtonStateDone];
             if (delegate) {
-                [delegate performSelector:doneSelector];
+                NSIndexPath *indexPath = [(UITableView *)self.superview indexPathForCell: self];
+                [delegate performSelector:doneSelector withObject:self withObject:indexPath];
             }
             break;
     }

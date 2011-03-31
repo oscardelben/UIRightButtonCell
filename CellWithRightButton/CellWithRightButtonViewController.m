@@ -37,20 +37,31 @@
     }
     
     cell.delegate = self;
-    cell.doneSelector = @selector(doneAction);
+    cell.doneSelector = @selector(doneAction:atIndexPath:);
 
-    cell.rightButtonTextNormal = @"Normal";
-    cell.rightButtonTextSelected = @"Tapped";
-    cell.rightButtonTextDone = @"Done";
-	cell.textLabel.text = [NSString stringWithFormat:@"Cell %i", indexPath.row + 1];
+    UIButton *normalButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    normalButton.frame = CGRectMake(0, 0, 80, 25);
+    [normalButton setTitle:@"Normal" forState:UIControlStateNormal];
+    
+    UIButton *selectedButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    selectedButton.frame = CGRectMake(0, 0, 80, 25);
+    [selectedButton setTitle:@"Selected" forState:UIControlStateNormal];
+    
+    UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    doneButton.frame = CGRectMake(0, 0, 80, 25);
+    [doneButton setTitle:@"Done" forState:UIControlStateNormal];
+    
+    cell.buttonStateNormal = normalButton;
+    cell.buttonStateSelected = selectedButton;
+    cell.buttonStateDone = doneButton;
+    
+	cell.textLabel.text = [NSString stringWithFormat:@"Cell %i", indexPath.row];
 	return cell;
 }
 
-
-// To do, should pass the cell itself and indexPath
-- (void)doneAction
+- (void)doneAction:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Done");
+    NSLog(@"Done. Row: %i", indexPath.row);
 }
 
 @end

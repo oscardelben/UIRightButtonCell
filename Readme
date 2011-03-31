@@ -1,3 +1,9 @@
 UITableViewCell with right button that detects touches. Similar to the one in the App Store
 
-Work in progress.
+Work in progress. Almost done.
+
+Todo:
+
+* Refactor code to add more consistency
+* Add animations
+* Documentation
