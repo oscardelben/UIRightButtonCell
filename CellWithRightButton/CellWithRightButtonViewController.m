@@ -35,12 +35,22 @@
     {
         cell = [[[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
+    
+    cell.delegate = self;
+    cell.doneSelector = @selector(doneAction);
 
     cell.rightButtonTextNormal = @"Normal";
     cell.rightButtonTextSelected = @"Tapped";
-    cell.rightButtonTextOff = @"Done";
+    cell.rightButtonTextDone = @"Done";
 	cell.textLabel.text = [NSString stringWithFormat:@"Cell %i", indexPath.row + 1];
 	return cell;
+}
+
+
+// To do, should pass the cell itself and indexPath
+- (void)doneAction
+{
+    NSLog(@"Done");
 }
 
 @end

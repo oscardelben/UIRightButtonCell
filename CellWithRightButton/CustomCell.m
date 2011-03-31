@@ -13,26 +13,29 @@
 
 #define kRightButtonStateNormal 0
 #define kRightButtonStateSelected 1
-#define kRightButtonStateOff 2
+#define kRightButtonStateDone 2
 
 @implementation CustomCell
 
-@synthesize rightButtonTextNormal, rightButtonTextSelected, rightButtonTextOff;
+@synthesize delegate;
+@synthesize rightButtonTextNormal, rightButtonTextSelected, rightButtonTextDone;
 @synthesize rightButtonState;
 @synthesize buttons;
-@synthesize buttonStateNormal, buttonStateSelected, buttonStateOff;
+@synthesize buttonStateNormal, buttonStateSelected, buttonStateDone;
+@synthesize doneSelector;
 
 - (void)dealloc
 {
+    [delegate release];
     [rightButtonTextNormal release];
     [rightButtonTextSelected release];
-    [rightButtonTextOff release];
+    [rightButtonTextDone release];
 
     [buttons release];
     
     [buttonStateNormal release];
     [buttonStateSelected release];
-    [buttonStateOff release];
+    [buttonStateDone release];
     
     [super dealloc];
 }
@@ -85,9 +88,9 @@
 
     buttonStateNormal = [self buttonWithTitle:rightButtonTextNormal];
     buttonStateSelected = [self buttonWithTitle:rightButtonTextSelected];
-    buttonStateOff = [self buttonWithTitle:rightButtonTextOff];
+    buttonStateDone = [self buttonWithTitle:rightButtonTextDone];
     
-    self.buttons = [NSArray arrayWithObjects:buttonStateNormal, buttonStateSelected, buttonStateOff, nil];
+    self.buttons = [NSArray arrayWithObjects:buttonStateNormal, buttonStateSelected, buttonStateDone, nil];
     
     // Should set this if null (but we don't have null for integers right?). Maybe it's already 0 by default
     rightButtonState = kRightButtonStateNormal;
@@ -97,26 +100,27 @@
     
     [self addSubview:buttonStateNormal];
     [self addSubview:buttonStateSelected];
-    [self addSubview:buttonStateOff];
+    [self addSubview:buttonStateDone];
 }
 
 // TODO: add callbacks for changing state
 - (void)buttonTouched:(id)sender
 {
-    NSLog(@"Button touched");
-    
     switch (rightButtonState) 
     {
         case kRightButtonStateNormal:
             [self switchViewsFromState:kRightButtonStateNormal toState:kRightButtonStateSelected];
             break;
 
-        case kRightButtonStateOff:
+        case kRightButtonStateDone:
             // do nothing
             break;
             
         case kRightButtonStateSelected:
-            [self switchViewsFromState:kRightButtonStateSelected toState:kRightButtonStateOff];
+            [self switchViewsFromState:kRightButtonStateSelected toState:kRightButtonStateDone];
+            if (delegate) {
+                [delegate performSelector:doneSelector];
+            }
             break;
     }
 }
@@ -124,15 +128,13 @@
 // Cell was touched
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"Touched cell");
-    
     switch (rightButtonState) 
     {
         case kRightButtonStateNormal:
             // do nothing
             break;
             
-        case kRightButtonStateOff:
+        case kRightButtonStateDone:
             // do nothing
             break;
             
