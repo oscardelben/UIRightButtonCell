@@ -9,11 +9,10 @@
 #import "CustomCell.h"
 
 #define padding 10
-#define fontSize 12
 
-#define kRightButtonStateNormal 0
-#define kRightButtonStateSelected 1
-#define kRightButtonStateDone 2
+#define kRightButtonStateNormal 1
+#define kRightButtonStateSelected 2
+#define kRightButtonStateDone 3
 
 @implementation CustomCell
 
@@ -75,10 +74,7 @@
     
     self.buttons = [NSArray arrayWithObjects:buttonStateNormal, buttonStateSelected, buttonStateDone, nil];
     [self configureButtons:buttons];
-    
-    // Should set this if null (but we don't have null for integers right?). Maybe it's already 0 by default
-    self.rightButtonState = kRightButtonStateNormal;
-    
+        
     UIButton *button = (UIButton *)[buttons objectAtIndex:rightButtonState];
     button.hidden = NO;
         
@@ -112,19 +108,9 @@
 // Cell was touched
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    switch (rightButtonState) 
+    if (rightButtonState == kRightButtonStateSelected)
     {
-        case kRightButtonStateNormal:
-            // do nothing
-            break;
-            
-        case kRightButtonStateDone:
-            // do nothing
-            break;
-            
-        case kRightButtonStateSelected:
-            [self switchViewsFromState:kRightButtonStateSelected toState:kRightButtonStateNormal];
-            break;
+        [self switchViewsFromState:kRightButtonStateSelected toState:kRightButtonStateNormal];
     }
 }
 

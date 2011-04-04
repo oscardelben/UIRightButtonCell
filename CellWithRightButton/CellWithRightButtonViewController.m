@@ -25,6 +25,10 @@
     return 5;
 }
 
+#define kRightButtonStateNormal 1
+#define kRightButtonStateSelected 2
+#define kRightButtonStateDone 3
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellIdentifier";
@@ -54,6 +58,8 @@
     cell.buttonStateNormal = normalButton;
     cell.buttonStateSelected = selectedButton;
     cell.buttonStateDone = doneButton;
+    
+    cell.rightButtonState = kRightButtonStateNormal;
     
 	cell.textLabel.text = [NSString stringWithFormat:@"Cell %i", indexPath.row];
 	return cell;
