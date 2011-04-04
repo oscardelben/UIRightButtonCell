@@ -10,9 +10,9 @@
 
 #define padding 10
 
-#define kRightButtonStateNormal 1
-#define kRightButtonStateSelected 2
-#define kRightButtonStateDone 3
+#define kRightButtonStateNormal 0
+#define kRightButtonStateSelected 1
+#define kRightButtonStateDone 2
 
 @implementation CustomCell
 

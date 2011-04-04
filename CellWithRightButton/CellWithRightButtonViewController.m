@@ -25,9 +25,9 @@
     return 5;
 }
 
-#define kRightButtonStateNormal 1
-#define kRightButtonStateSelected 2
-#define kRightButtonStateDone 3
+#define kRightButtonStateNormal 0
+#define kRightButtonStateSelected 1
+#define kRightButtonStateDone 2
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
