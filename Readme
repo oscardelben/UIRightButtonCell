@@ -1,9 +1,8 @@
 UITableViewCell with right button that detects touches. Similar to the one in the App Store
 
-Work in progress. Almost done.
+This is an example app that shows how to have a UITableViewCell with a right button with three states. Suggestions for improvements are very welcome/
 
 Todo:
 
-* Refactor code to add more consistency
 * Add animations
-* Documentation
+* Detect touch in the whole table view
